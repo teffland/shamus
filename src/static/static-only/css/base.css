@@ -1,0 +1,92 @@
+/* Color Scheme */
+.grey  { color:#58595B;}
+.white { color:#FFFFFF;}
+.brown { color:#68471A;}
+.green { color:#8DC63F;}       
+
+.bg-grey  { background-color:#58595B;}
+.bg-white { background-color:#FFFFFF;}
+.bg-brown { background-color:#68471A;}
+.bg-green { background-color:#8DC63F;}
+
+/* Fonts */
+@font-face {
+  font-family: title;
+  src: url('/static/fonts/CaviarDreams.ttf');
+}
+
+body {
+    font-family: "Monotype Corsiva";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: title;
+}
+/* Navigation Bar */
+.navbar { border-width: 0px;
+          border-top-left-radius: 0px;
+          border-top-right-radius: 0px;
+          font-family: title;
+      }
+div.navbar-header > * > img { height: 100px;
+                              margin-right: 53px;
+                              vertical-align: middle;
+                              }
+.navbar-nav > li > a {  color:#58595B;
+                        background-color: #FFFFFF;
+                        -webkit-transition: color, background-color 1s; /* Safari */
+                        transition: color, background-color 1s;
+                        line-height:75px;
+                        font-size: 24px;
+                        }
+
+.navbar-nav>li>a:hover{ color:#FFFFFF;
+                        background-color:#58595B;
+                        -webkit-transition: color, background-color 1s; /* Safari */
+                        transition: color, background-color 1s;
+                       }
+
+/* Collapsed Nav Bar changes */
+.navbar-collapse {
+    text-align:center;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse.collapse {
+      display: none !important;
+    }
+}
+
+/* Override bootstrap media query at 768px */
+@media (min-width: 768px) {
+    .navbar-toggle {
+      display: initial;
+    }
+}
+/* Then change min-width to be 991px */
+@media (min-width: 991px) {
+    .navbar-toggle {
+      display: none;
+    }
+}
+
+
+
+.navbar-toggle {
+    border-color:#58595B;
+    margin-top:25px;
+    padding: 17px 15px;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #58595B;
+  display: block;
+  width: 30px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+/* Base Body */
+body { background-color:#58595B;
+       color: #FFFFFF;
+     }
