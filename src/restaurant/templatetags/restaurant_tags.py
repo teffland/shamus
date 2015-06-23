@@ -3,8 +3,7 @@ from restaurant.models import MenuType
 
 register = template.Library()
 
-@register.simple_tag
+@register.assignment_tag
 def menu_types():
-    menus = MenuType.objects.all().order_by('start_time')
-    print "Menus:", menus
-    return "Menu" #menus
+    return MenuType.objects.all().order_by('start_time')
+

@@ -29,8 +29,9 @@ urlpatterns += patterns('restaurant.views',
     url(r'^/$', 'home', name='home'),
     url(r'^home/$', 'home', name='home'),
     # Menu
+    url(r'^menu/(?P<menutype>.*)/$', 'view_menu', name='view_menu'),
 
-    url(r'^(?P<url>.*/)$', 'static', name='static')
+    url(r'^(?P<url>.*/)$', 'static', name='static') # static page catchall
 
 )
 
