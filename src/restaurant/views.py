@@ -8,9 +8,12 @@ def home(request):
     return render(request, 'home.html', context)
 
 def view_menu(request, menutype):
-    print 'memnutype:', menutype
     menutype= get_object_or_404(MenuType, name=menutype)
-    context = {'menutype': menutype}
+    categories = menutype.categories()
+
+    context = { 'menutype': menutype,
+                'categories': categories
+                }
     return render(request, 'menu.html', context)
 
 def static(request, url=None):

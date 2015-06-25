@@ -18,8 +18,17 @@ a {
   src: url('/static/fonts/CaviarDreams.ttf');
 }
 
+@font-face {
+  font-family: scripty;
+  /*src: url('/static/fonts/Plumeria.ttf');*/
+  src: url('/static/fonts/apple_garamond/AppleGaramond-LightItalic.ttf');
+  /*src: url('/static/fonts/derivia/Derivia.TTF');*/
+  /*src: url('/static/fonts/Oranianbauma.ttf');*/
+
+}
+
 body {
-    font-family: "Monotype Corsiva";
+    font-family: scripty;/*"Monotype Corsiva";*/
     font-size: 20px;
 }
 
@@ -124,6 +133,21 @@ div.navbar-header > * > img { height: 100px;
         line-height: 15px;
         text-align: center;
     }
+}
+
+/* Menu CSS */
+.menu-container {
+    color:#58595B;
+    background-color: #fff;
+    width: 80%;
+    box-shadow: 2px 0px 10px #333;
+}
+
+table {
+    width:100%;
+}
+td {
+    padding: 10px;
 }
 
 /* Base Body */

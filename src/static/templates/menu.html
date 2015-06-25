@@ -2,12 +2,50 @@
 
 
 {% block content %}
-    <div class="container">
+    <div class="container menu-container">
 
-      <div class="starter-template">
-        <h1>MENU YO</h1>
-        <h1>{{menutype.name}}</h1>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+        <h1 class="text-center" id="#top">{{menutype.name}}</h1>
+        <!-- Menu Category shortcuts  -->
+        <ul class="nav nav-pills nav-justified">
+            {% for cat in categories %}
+                <li><a href="#{{cat.id}}">
+                    <span class="menu-shortcut">{{cat.name}}</span>
+                </a></li>
+            {% endfor %}
+        </ul>
+        </div>
+        <!-- Skinnier menu  -->
+        <div class="col-md-8 col-md-offset-2"> 
+        <!-- Display the full menus -->
+        {% for cat in categories %}
+        <table class="menu-table">
+        <h3 id="{{cat.id}}" class="text-center">{{cat.name}}</h3>
+            <hr class="menu-hr">
+            <span class="category-description">
+                {{cat.description|safe}}
+            </span>
+            {% for item in cat.items %}
+                <tr class="menu-item">
+                    <td>{{item.name}}</td>
+                    <td class="menu-price grey" align="right">{{option.price_prefix}}  {{item.price|floatformat}}</td>
+                </tr>
+                {% for option in item.options %}
+                <tr class="menu-option">
+                    <td>{{option.description}}</td>
+                    <td class="menu-price grey" align="right">{{option.price_prefix}}  {{option.price|floatformat}}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </table>
+        {% endfor %}     
+                <div id="top-link"><a href="#top">Top</a></div>       
+        </div>
       </div>
+
+      <!-- Floating Top Button -->
+      
 
     </div><!-- /.container -->
 {% endblock %}

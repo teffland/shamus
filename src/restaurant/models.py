@@ -12,11 +12,17 @@ class MenuCategory(models.Model):
     # how the items are to be displayed on the menu
     #display_type = models
     order_affinity = models.PositiveSmallIntegerField(default=5,
-                                                      help_text="Please specify how far down the menu it should be rendered, starting at 1"
-                                                      )
+                                                help_text="Please specify how far down the menu it should be rendered, starting at 1"
+                                                )
+    menu_types = models.ManyToManyField('MenuType')
+
+    def items(self):
+        return self.menuitem_set.all()
+
     # this displays as string on site
     def __unicode__(self):
-        return "%s : %s" % (self.name, self.description)
+        parent_menus = ', '.join([menu.name for menu in self.menu_types.all()])
+        return "%s (in %s)" % (self.name, parent_menus)
 
 
 class MenuType(models.Model):
@@ -29,12 +35,52 @@ class MenuType(models.Model):
                                    help_text="The description to be displayed when scrolling over the menu"
                                    )
     start_time = models.TimeField(blank=False,
-                                  help_text="What time the menu is available to be served")
+                                  help_text="What time the menu is available to be served. Format: 1 pm is 13:00:00")
     end_time = models.TimeField(blank=False,
-                                help_text="What time the the menu is no longer served")
+                                help_text="What time the the menu is no longer served. Format: 1 pm is 13:00:00")
+
+    def categories(self):
+        """ Get the MenuItems that have this MenuType """
+        return self.menucategory_set.all().order_by('order_affinity')
 
     def __unicode__(self):
-        return "%s : %s" % (self.name, self.description)
+      if self.description: return "%s : %s" % (self.name, self.description)
+      else: return self.name
+        
+
+class ItemOption(models.Model):
+    """Description and Price option for a MenuItem.
+    * Allows one Item to have multiple options with individual pricing
+
+    eg.  Build-it Burger             
+            Plain                         7
+            Cheese                        8
+                Swiss, Cheddar, or Jack
+            Add Bacon                     +1
+            Add Avocado                   +1  
+
+    Could be made of a Burger MenuItem, and 5 Options that have
+    the burger as their parent item """
+    description = models.CharField(max_length=255,
+                                   blank=True,
+                                   help_text="The description text"
+                                   )
+
+    price = models.DecimalField(blank=True,
+                                null=True,
+                                max_digits=6,
+                                decimal_places=2,
+                                help_text="How much the item costs"
+                                )
+    price_prefix = models.CharField(max_length=10,
+                                    blank=True,
+                                    help_text="Text to be displayed after price"
+                                   )
+    parent_item = models.ForeignKey('MenuItem')
+
+    def __unicode__(self): 
+      if self.price: return "%s - %s" % (self.description, self.price)
+      else: return self.description
 
 class MenuItem(models.Model):
     """ An item on a menu"""
@@ -42,22 +88,41 @@ class MenuItem(models.Model):
                             blank=False,
                             help_text="The name of a menu item, eg. Lobster Bisque"
                             )
-    description = models.TextField(blank=True,
-                                   help_text="The description to be displayed when scrolling over the item"
-                                   )
-    price = models.DecimalField(blank=False,
+    
+    price = models.DecimalField(blank=True,
+                                null=True,
                                 max_digits=6,
                                 decimal_places=2,
-                                help_text="How much the item costs")
+                                help_text="How much the item costs"
+                                )
+    price_prefix  = models.CharField(max_length=10,
+                                    blank=True,
+                                    help_text="Text to be displayed after price"
+                                    )
+
     image = models.ImageField(blank=True,
                               height_field="height",
                               width_field="width",
-                              help_text="Please upload an image of the dish")
-    menu_types = models.ManyToManyField('MenuType')
-    menu_category = models.ForeignKey('MenuCategory')
+                              help_text="Please upload an image of the dish"
+                              )
+
+    menu_category = models.ManyToManyField('MenuCategory')
+
+    published = models.BooleanField(default=True)
+
+    def options(self):
+        """ Get all of the options associated with this item """
+        return self.itemoption_set.all()
 
     def __unicode__(self):
-        return "%s : %s" % (self.name, self.description)
+       # = ', '.join(self.options()
+      # if self.options(): return "%s ,%f : %s" % (self.name, self.price, self.options())
+      # else: return "%s , $%d" % (self.name, self.price)
+      print "P: ",self.price
+      categories = ", ".join([ unicode(cat) for cat in self.menu_category.all()])
+      if self.price: return "%s, $%d : %s" % (self.name, self.price, categories)
+      else: return "%s : %s" % (self.name, categories)
+
 
 class SliderImage(models.Model):
     """ Images for the front page slider, all images not associated with a MenuItem"""
