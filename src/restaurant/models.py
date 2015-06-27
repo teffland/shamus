@@ -133,10 +133,16 @@ class SliderImage(models.Model):
     caption = models.TextField(blank=True,
                                help_text="The caption to be displayed overlaying the image"
                                )
+    width = models.IntegerField(default=500,
+                                help_text="Suggested keep 16:9 aspect ratio for width:height")
+    height = models.IntegerField(default=500,
+                                 help_text="Ideally, height is 9/16(width) naturally; it will be stretched to this ratio automatically")
+
     image = models.ImageField(blank=False,
-                              height_field="height",
-                              width_field="width",
-                              help_text="An image to be displayed in the slider"
+                              help_text="An image to be displayed in the slider",
+                              width_field='width',
+                              height_field='height',
+                              upload_to="image-slider"
                               )
     link = models.URLField(blank=True,
                            help_text="Please provide a link to the part of the site the image is representing"
@@ -144,6 +150,8 @@ class SliderImage(models.Model):
     order_affinity = models.PositiveSmallIntegerField(default=5,
                                                       help_text="Please specify how far the down the slider it should be rendered, starting at 1"
                                                       )
+
+    published = models.BooleanField(default=True)
 
     def __unicode__(self):
         return "%s : %s" % (self.name, self.caption)

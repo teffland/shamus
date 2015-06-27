@@ -4,6 +4,9 @@ from restaurant.models import MenuItem, MenuType, MenuCategory, SliderImage, Sta
 # Create your views here.
 def home(request):
     context = {}
+    imgs = SliderImage.objects.filter(published=True).order_by('order_affinity')
+    context['imgs'] = imgs
+    print imgs
 
     return render(request, 'home.html', context)
 

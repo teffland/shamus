@@ -12,6 +12,9 @@
 a {
     color: #8DC63F;
 }
+a:hover, a:focus {
+  text-decoration: none;
+}
 /* Fonts */
 @font-face {
   font-family: title;
@@ -20,6 +23,17 @@ a {
 
 @font-face {
   font-family: scripty;
+  src: url('/static/fonts/CaviarDreams.ttf');
+  /*src: url('/static/fonts/Plumeria.ttf');*/
+  /*src: url('/static/fonts/apple_garamond/AppleGaramond-LightItalic.ttf');*/
+  /*src: url('/static/fonts/derivia/Derivia.TTF');*/
+  /*src: url('/static/fonts/Oranianbauma.ttf');*/
+
+}
+
+@font-face {
+  font-family: option;
+  /*src: url('/static/fonts/CaviarDreams.ttf');*/
   /*src: url('/static/fonts/Plumeria.ttf');*/
   src: url('/static/fonts/apple_garamond/AppleGaramond-LightItalic.ttf');
   /*src: url('/static/fonts/derivia/Derivia.TTF');*/
@@ -29,7 +43,18 @@ a {
 
 body {
     font-family: scripty;/*"Monotype Corsiva";*/
-    font-size: 20px;
+    font-size: 20px;   
+}
+
+html, body { 
+  height:100%;
+}
+.site-wrapper {
+  display: table;
+  width:100%;
+  height: 100%;
+  min-height: 100%;
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
           border-top-left-radius: 0px;
           border-top-right-radius: 0px;
           font-family: title;
+          margin-bottom: 0px;
       }
 
 div.navbar-header > * > img { height: 100px;
@@ -140,17 +166,94 @@ div.navbar-header > * > img { height: 100px;
     color:#58595B;
     background-color: #fff;
     width: 80%;
-    box-shadow: 2px 0px 10px #333;
+    box-shadow: 10px 0px 20px #333;
 }
 
-table {
-    width:100%;
+hr.menu-hr {
+  border: 3px;
+  /*green*/
+  /*border-top: 2px solid #8DC63F; */
+  /*brown*/
+  border-top: 2px solid #68471A; 
+  /*grey*/
+  /*border-top: 2px solid #58595B; */
 }
-td {
-    padding: 10px;
+
+table.menu-table {
+    width:100%;
+    margin-bottom: 50px;
+}
+
+tr.menu-item {
+  font-size: 18px;
+}
+
+tr.menu-option {
+  color:#68471A;
+  /*color: #8DC63F;*/
+  font-family: option;
+  font-size: 14px;
+
+}
+
+.menu-price {
+  font-size: 16px;
+  font-family: scripty;
+  white-space: nowrap;
+}
+
+tr.menu-item>td {
+  padding: 5px 15px 5px 40px;
+}
+
+tr.menu-item>td.menu-price, tr.menu-option>td.menu-price {
+  padding: 5px 40px 5px 15px;
+}
+
+tr.menu-option>td {
+  padding-left: 70px;
+}
+
+.category-description {
+  font-family: option;
+  text-align: center;
+}
+
+div#top-link {
+  position: fixed;
+  bottom: 20px;
+  right: 15%;
+  z-index: 1;
+  /*width: 100%;*/
 }
 
 /* Base Body */
 body { background-color:#58595B;
        color: #FFFFFF;
      }
+
+/* Menu Categories tabs pill */
+.nav-pills>li>a {
+  height: 100px;
+  line-height: 75px;
+  text-align: center;
+}
+
+span.menu-shortcut {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;      
+}
+
+@media (max-width: 992px) {
+  .nav-pills>li>a {
+    height: auto;
+    line-height:0px;
+  }
+}
+
+/* Home page image slider */
+.carousel-inner>.item>img {
+  /*width:100px;*/
+  /*height:750px;*/
+}
