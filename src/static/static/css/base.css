@@ -264,6 +264,7 @@ footer {
   position: relative;
   left: 0;
   bottom: 0; 
+  min-height: auto;
   margin-top:20px;
   margin-bottom:0px;
   padding:20px 0px 20px 0px;
