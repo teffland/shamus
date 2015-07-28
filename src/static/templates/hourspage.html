@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h1 class="text-center">{{title | safe}}</h1>
+                <div class="text-center">{{content | safe}}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <h3 class="text-center">Directions</h1>
+                <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Shamus%20Restaurant%2C%20West%20Avenue%2C%20Lockport%2C%20NY%2C%20United%20States&key=AIzaSyBBudkzPorj5vgoo3BEAkFTmevwjFyRLcw" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div><!-- /.container -->
+{% endblock %}
