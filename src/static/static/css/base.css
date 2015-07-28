@@ -113,6 +113,7 @@ div.navbar-header > * > img { height: 100px;
 .dropdown-menu {
     min-width: 100%;
     border-top-color: #FFFFFF;
+
 }
 /*.open>.dropdown-menu {
     -webkit-transition: display 1s;
@@ -162,10 +163,14 @@ div.navbar-header > * > img { height: 100px;
     .navbar-nav > li > a { 
       line-height:35px;
       font-size: 18px;
-                          }
+    }
+    footer {
+      font-size: 16px;
+    }
+
 }
 @media (max-width: 991px) {
-    .navbar-nav .open .dropdown-menu>li>a {
+    .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .dropdown-menu>li>a {
       color: #FFFFFF;
       background-color: #58595B;
       line-height: 15px;
