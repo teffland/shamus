@@ -31,6 +31,8 @@ urlpatterns += patterns('restaurant.views',
     url(r'^home/$', 'home', name='home'),
     # Menu
     url(r'^menu/(?P<menutype>.*)/$', 'view_menu', name='view_menu'),
+    # Contact
+    # url(r'^contact-us/$', 'contact_us', name='contact_us'),
 
     url(r'^(?P<url>.*/)$', 'static', name='static') # static page catchall
 

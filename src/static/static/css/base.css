@@ -59,6 +59,11 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: title;
+    color:#8DC63F;
+}
+
+.carousel-caption>h1 {
+  color:#FFFFFF;
 }
 
 .container-fluid {
@@ -273,7 +278,13 @@ a.carousel-control {
 
 /* Home page blurbs */
 .blurb-comment {
-  color:#8DC63F;
+  color:#FFFFFF;
+}
+
+/* Contact inputs */
+input, textarea {
+  color:#000;
+  font-family: Arial;
 }
 
 /* Footer */
