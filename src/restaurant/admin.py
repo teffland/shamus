@@ -3,7 +3,7 @@ from django import forms
 from django.db import models
 
 # Register your models here.
-from .models import MenuItem, ItemOption, MenuType, MenuCategory, SliderImage, StaticPage
+from .models import MenuItem, ItemOption, MenuType, MenuCategory, SliderImage, StaticPage, FrontPageBlurb
 
 # Define the Admin Classes for managing in the admin site
 class ItemOptionAdmin(admin.ModelAdmin):
@@ -66,6 +66,15 @@ class StaticPageAdmin(admin.ModelAdmin):
     class Meta:
         model = StaticPage
 
+class FrontPageBlurbAdmin(admin.ModelAdmin):
+    # formfield_overrides = { models.TextField: {'widget': forms.Textarea(attrs={'class':'ckeditor'})}, }
+
+    class Media:
+        js = ('ckeditor/ckeditor.js',) # The , at the end of this list IS important.
+
+    class Meta:
+        model = FrontPageBlurb
+
 # Register the Admin models to the admin site
 admin.site.register(MenuItem, MenuItemAdmin)
 admin.site.register(ItemOption, ItemOptionAdmin)
@@ -73,3 +82,4 @@ admin.site.register(MenuType, MenuTypeAdmin)
 admin.site.register(MenuCategory, MenuCategoryAdmin)
 admin.site.register(SliderImage, SliderImageAdmin)
 admin.site.register(StaticPage, StaticPageAdmin)
+admin.site.register(FrontPageBlurb, FrontPageBlurbAdmin)

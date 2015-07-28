@@ -133,9 +133,9 @@ class SliderImage(models.Model):
     caption = models.TextField(blank=True,
                                help_text="The caption to be displayed overlaying the image"
                                )
-    width = models.IntegerField(default=500,
+    width = models.IntegerField(default=1024,
                                 help_text="Suggested keep 16:9 aspect ratio for width:height")
-    height = models.IntegerField(default=500,
+    height = models.IntegerField(default=576,
                                  help_text="Ideally, height is 9/16(width) naturally; it will be stretched to this ratio automatically")
 
     image = models.ImageField(blank=False,
@@ -178,3 +178,34 @@ class StaticPage(models.Model):
 
     def __unicode__(self):
         return "%s : %s" % (self.title, self.url)
+
+class FrontPageBlurb(models.Model):
+    """ Featurette Blurbs for the front page"""
+    heading = models.CharField(max_length=50,
+                             blank=False,
+                             help_text="The title to appear at the top of the blurb"
+                             )
+    comment = models.CharField(max_length=50,
+                             blank=True,
+                             help_text="An afterthought to appear next to the heading at the top of the blurb"
+                             )
+    content = models.TextField(blank=True,
+                               help_text="The main content of the blurb"
+                               )
+    width = models.IntegerField(default=500,
+                                help_text="You don't need to change this (it adjusts automatically)")
+    height = models.IntegerField(default=500,
+                                 help_text="You don't need to change this (it adjusts automatically)")
+    image = models.ImageField(blank=False,
+                              help_text="An image to be displayed in the featurette",
+                              width_field='width',
+                              height_field='height',
+                              upload_to="featurette-images"
+                              )
+    published = models.BooleanField(default=True)
+    order_affinity = models.PositiveSmallIntegerField(default=5,
+                                                      help_text="Please specify how far the down the page it should be rendered, starting at 1"
+                                                      )
+
+    def __unicode__(self):
+        return "%s %s" % (self.heading, self.comment)

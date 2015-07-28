@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 
-from restaurant.models import MenuItem, MenuType, MenuCategory, SliderImage, StaticPage
+from restaurant.models import MenuItem, MenuType, MenuCategory, SliderImage, StaticPage, FrontPageBlurb
 # Create your views here.
 def home(request):
     context = {}
     imgs = SliderImage.objects.filter(published=True).order_by('order_affinity')
     context['imgs'] = imgs
-    print imgs
+    blurbs = FrontPageBlurb.objects.filter(published=True).order_by('order_affinity')
+    context['blurbs'] = blurbs
 
     return render(request, 'home.html', context)
 

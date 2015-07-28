@@ -60,6 +60,10 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
     font-family: title;
 }
+
+.container-fluid {
+  min-height: 68%;
+}
 /* Navigation Bar */
 .navbar { border-width: 0px;
           border-top-left-radius: 0px;
@@ -150,14 +154,22 @@ div.navbar-header > * > img { height: 100px;
     } 
 }
 @media (max-width: 991px) {
-    .navbar-nav > li > a { line-height:35px;
-                            font-size: 18px;
+    .navbar-nav > li > a { 
+      line-height:35px;
+      font-size: 18px;
                           }
 }
 @media (max-width: 991px) {
     .navbar-nav .open .dropdown-menu>li>a {
-        line-height: 15px;
-        text-align: center;
+      color: #FFFFFF;
+      background-color: #58595B;
+      line-height: 15px;
+      text-align: center;
+    }
+    .navbar-nav .open .dropdown-menu>li>a:hover {
+      background-color:rgba(88, 89, 91, 0.80);
+      -webkit-transition: background-color .5s; /* Safari */
+      transition: background-color .5s;
     }
 }
 
@@ -259,18 +271,22 @@ a.carousel-control {
   transition:.5s;
 }
 
+/* Home page blurbs */
+.blurb-comment {
+  color:#8DC63F;
+}
+
 /* Footer */
 footer {
   position: relative;
   left: 0;
   bottom: 0; 
-  min-height: auto;
   margin-top:20px;
   margin-bottom:0px;
   padding:20px 0px 20px 0px;
   background-color: #fff;
   color:#58595B;
-  height:100px;
+  min-height:100px;
   line-height:60px;
   width:100%;
   z-index:2000;
