@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django import forms
 from django.db import models
+from solo.admin import SingletonModelAdmin
 
 # Register your models here.
-from .models import MenuItem, ItemOption, MenuType, MenuCategory, SliderImage, StaticPage, FrontPageBlurb
+from .models import MenuItem, ItemOption, MenuType, MenuCategory, SliderImage, StaticPage, FrontPageBlurb, MaintenanceMode
 
 # Define the Admin Classes for managing in the admin site
 class ItemOptionAdmin(admin.ModelAdmin):
@@ -67,13 +68,15 @@ class StaticPageAdmin(admin.ModelAdmin):
         model = StaticPage
 
 class FrontPageBlurbAdmin(admin.ModelAdmin):
-    # formfield_overrides = { models.TextField: {'widget': forms.Textarea(attrs={'class':'ckeditor'})}, }
+    formfield_overrides = { models.TextField: {'widget': forms.Textarea(attrs={'class':'ckeditor'})}, }
 
     class Media:
         js = ('ckeditor/ckeditor.js',) # The , at the end of this list IS important.
 
     class Meta:
         model = FrontPageBlurb
+
+
 
 # Register the Admin models to the admin site
 admin.site.register(MenuItem, MenuItemAdmin)
@@ -83,3 +86,4 @@ admin.site.register(MenuCategory, MenuCategoryAdmin)
 admin.site.register(SliderImage, SliderImageAdmin)
 admin.site.register(StaticPage, StaticPageAdmin)
 admin.site.register(FrontPageBlurb, FrontPageBlurbAdmin)
+admin.site.register(MaintenanceMode, SingletonModelAdmin)

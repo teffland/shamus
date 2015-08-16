@@ -1,4 +1,5 @@
 from django.db import models
+from solo.models import SingletonModel
 
 class MenuCategory(models.Model):
     """ A Category of menu items, eg Salads/Soups, Entrees, etc."""
@@ -209,3 +210,13 @@ class FrontPageBlurb(models.Model):
 
     def __unicode__(self):
         return "%s %s" % (self.heading, self.comment)
+
+class MaintenanceMode(SingletonModel):
+    """ Whether Site is in maintenance mode or not"""
+    maintenance = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return "Site in mantenance? %s " % self.maintenance # something like this will make admin message strings more coherent
+
+    class Meta:
+        verbose_name = "Maintenance Mode"

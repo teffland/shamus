@@ -49,7 +49,7 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">{{blurb.heading}}  <span class="blurb-comment">{{blurb.comment}}</span></h2>
-          <p class="lead">{{blurb.content}}</p>
+          <p class="lead">{{blurb.content|safe}}</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive center-block" src="/media/{{blurb.image}}">
@@ -61,7 +61,7 @@
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
           <h2 class="featurette-heading">{{blurb.heading}}  <span class="blurb-comment">{{blurb.comment}}</span></h2>
-          <p class="lead">{{blurb.content}}</p>
+          <p class="lead">{{blurb.content|safe}}</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
           <img class="featurette-image img-responsive center-block" src="/media/{{blurb.image}}">
