@@ -26,3 +26,13 @@ $('.dropdown').on('show.bs.dropdown', function(e){
 $('.dropdown').on('hide.bs.dropdown', function(e){
   $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
 });
+
+// Sticky header for style
+// $(window).scroll(function() {
+// if ($(this).scrollTop() > 10){  
+//     $('div.nav-container').removeClass("nav-container").addClass("nav-container-sticky");
+//   }
+//   else{
+//     $('div.nav-container-sticky').removeClass("nav-container-sticky").addClass("nav-container");
+//   }
+// });

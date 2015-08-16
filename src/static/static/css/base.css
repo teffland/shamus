@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container-fluid {
+
   min-height: 68%;
 }
 /* Navigation Bar */
@@ -75,6 +76,8 @@ h1, h2, h3, h4, h5, h6 {
           border-top-right-radius: 0px;
           font-family: title;
           margin-bottom: 0px;
+          transition: all 0.4s ease;
+          -webkit-transition: all 0.4s ease;
       }
 
 .navbar-header-img >img {
@@ -85,17 +88,21 @@ h1, h2, h3, h4, h5, h6 {
   display:block;
 }
 
-div.navbar-header > * > img { height: 100px;
-                              float: left;
-                              margin-right: 53px;
-                              vertical-align: middle;
+div.nav-container, div.nav-container-sticky {
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
+div.nav-container > div.navbar-header> a > img {
+                              height: 120px;
+                              margin-right: 33px;
                               }
 
 .navbar-nav > li > a {  color:#58595B;
                         background-color: #FFFFFF;
                         -webkit-transition: color, background-color 1s; /* Safari */
                         transition: color, background-color 1s;
-                        line-height:75px;
+                        line-height:95px;
                         font-size: 24px;
                         }
 
