@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/static/img/favicon.gif">
+
+    <title>Shamus Restaurant - Lockport, NY - Fine Dining</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery UI CSS -->
+    <link href="/static/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="/static/css/jquery-ui.structure.min.css" rel="stylesheet">
+    <link href="/static/css/jquery-ui.theme.min.css" rel="stylesheet">
+    <link href="/static/css/simple-sidebar.css" rel="stylesheet">
+    <!-- <link href="/static/jquery-slideshow-plugin/assets/jQuery-slideshow-plugin/plugin.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/base.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <p>The site is currently offine for maintenance.  Please check back shortly or call or email us at 716.433.9809 or <a class="pull-right" href="mailto:info@shamuslockport.com">info@shamuslockport.com</a></p>
+        <p>Thanks!</p>
+      </div>
+    </div>
+
+  </body>
+
+    <!-- Footer  -->
+    <footer>
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-1">
+          &copy; 2015 Shamus Restaurant
+          <br>
+          98 West Ave, Lockport, NY 14094.
+        </div>
+        <div class="col-xs-2">
+          716.433.9809
+        </div>
+        <div class="col-xs-3">
+          <a class="pull-right" href="mailto:info@shamuslockport.com">info@shamuslockport.com</a>
+          <br>
+          <a class="pull-right" href="#">Back to top</a>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-xs-6 col-xs-offset-1">
+          
+        </div>
+
+        <div class="col-xs-3">
+          
+        </div>
+      </div> -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.confirm.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <!-- <script src="/static/jquery-slideshow-plugin/assets/jQuery-slideshow-plugin/plugin.js"></script> -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript
+    ================================================== -->
+    <script src="/static/js/custom.js"></script>
+
+</html>
