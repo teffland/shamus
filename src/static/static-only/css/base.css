@@ -3,6 +3,7 @@
 .white { color:#FFFFFF;}
 .brown { color:#68471A;}
 .green { color:#8DC63F;}       
+.black { color:#000000;}
 
 .bg-grey  { background-color:#58595B;}
 .bg-white { background-color:#FFFFFF;}
@@ -33,9 +34,9 @@ a:hover, a:focus {
 
 @font-face {
   font-family: option;
-  /*src: url('/static/fonts/CaviarDreams.ttf');*/
+  src: url('/static/fonts/CaviarDreams.ttf');
   /*src: url('/static/fonts/Plumeria.ttf');*/
-  src: url('/static/fonts/apple_garamond/AppleGaramond-LightItalic.ttf');
+  /*src: url('/static/fonts/apple_garamond/AppleGaramond-LightItalic.ttf');*/
   /*src: url('/static/fonts/derivia/Derivia.TTF');*/
   /*src: url('/static/fonts/Oranianbauma.ttf');*/
 
@@ -59,6 +60,17 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: title;
+    color:#8DC63F;
+}
+
+.carousel-caption>h1 {
+  color:#000;
+  text-shadow:0 0 3px #fff;
+}
+
+.container-fluid {
+
+  min-height: 68%;
 }
 /* Navigation Bar */
 .navbar { border-width: 0px;
@@ -66,19 +78,33 @@ h1, h2, h3, h4, h5, h6 {
           border-top-right-radius: 0px;
           font-family: title;
           margin-bottom: 0px;
+          transition: all 0.4s ease;
+          -webkit-transition: all 0.4s ease;
       }
 
-div.navbar-header > * > img { height: 100px;
-                              float: left;
-                              margin-right: 53px;
-                              vertical-align: middle;
+.navbar-header-img >img {
+  margin-left: auto;
+  margin-right: auto; 
+  width:100%;
+  max-height:300px; 
+  display:block;
+}
+
+div.nav-container, div.nav-container-sticky {
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
+div.nav-container > div.navbar-header> a > img {
+                              height: 120px;
+                              margin-right: 33px;
                               }
 
 .navbar-nav > li > a {  color:#58595B;
                         background-color: #FFFFFF;
                         -webkit-transition: color, background-color 1s; /* Safari */
                         transition: color, background-color 1s;
-                        line-height:75px;
+                        line-height:95px;
                         font-size: 24px;
                         }
 
@@ -104,6 +130,7 @@ div.navbar-header > * > img { height: 100px;
 .dropdown-menu {
     min-width: 100%;
     border-top-color: #FFFFFF;
+
 }
 /*.open>.dropdown-menu {
     -webkit-transition: display 1s;
@@ -150,14 +177,26 @@ div.navbar-header > * > img { height: 100px;
     } 
 }
 @media (max-width: 991px) {
-    .navbar-nav > li > a { line-height:35px;
-                            font-size: 18px;
-                          }
+    .navbar-nav > li > a { 
+      line-height:35px;
+      font-size: 18px;
+    }
+    footer {
+      font-size: 16px;
+    }
+
 }
 @media (max-width: 991px) {
-    .navbar-nav .open .dropdown-menu>li>a {
-        line-height: 15px;
-        text-align: center;
+    .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .dropdown-menu>li>a {
+      color: #FFFFFF;
+      background-color: #58595B;
+      line-height: 15px;
+      text-align: center;
+    }
+    .navbar-nav .open .dropdown-menu>li>a:hover {
+      background-color:rgba(88, 89, 91, 0.80);
+      -webkit-transition: background-color .5s; /* Safari */
+      transition: background-color .5s;
     }
 }
 
@@ -167,6 +206,7 @@ div.navbar-header > * > img { height: 100px;
     background-color: #fff;
     width: 80%;
     box-shadow: 10px 0px 20px #333;
+    margin-top:20px;
 }
 
 hr.menu-hr {
@@ -253,7 +293,38 @@ span.menu-shortcut {
 }
 
 /* Home page image slider */
-.carousel-inner>.item>img {
-  /*width:100px;*/
-  /*height:750px;*/
+a.carousel-control {
+  -webkit-transition:.5s; /* Safari */
+  transition:.5s;
+}
+
+/* Home page blurbs */
+.blurb-comment {
+  color:#FFFFFF;
+}
+
+/* Contact inputs */
+input, textarea {
+  color:#000;
+  font-family: Arial;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0; 
+  margin-top:20px;
+  margin-bottom:0px;
+  padding:20px 0px 20px 0px;
+  background-color: #fff;
+  color:#58595B;
+  min-height:100px;
+  line-height:60px;
+  width:100%;
+  z-index:2000;
+}
+
+footer>div.row {
+  margin:0px;
 }

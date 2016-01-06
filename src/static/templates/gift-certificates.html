@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h1 class="text-center">Gift Certificates</h1>
+                
 <p><em>Looking for a tasteful gift?</em></p>
 
 <p>The Shamus Restaurant is pleased to offer our customers the opportunity to purchase gift certificates online!</p>
 
 <p>If you prefer to purchase gift certificates by telephone, or if you would like to purchase other dollar denominations than those listed below, please call us at 716.433.9809.</p>
 
-<br><br><br>
+<br><br>
 
 <div style="text-align:center;">
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -28,8 +32,12 @@
 </form>
 </div>
 
-<br><br><br>
+<br><br>
 
 <p><em>Please <a href="/contact-us/">let us know</a> about your online shopping experience. We'd like to know how we can improve our offerings and services.</em></p>
 
+
+            </div>
+        </div>
+    </div><!-- /.container -->
 {% endblock %}

@@ -3,3 +3,5 @@ Source implementation of the Shamus Restaurant site. A simple and tasteful resta
 I'm not a web developer but I did this project to help out a family friend.
 
 Check it out in deployment (code differs slightly) [here](http://shamuslockport.com)
+
+To run gunicorn use: ```gunicorn shamus.wsgi:application```
