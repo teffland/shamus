@@ -27,11 +27,18 @@ def view_menu(request, menutype):
                 }
     return render(request, 'menu.html', context)
 
+def gifts(request):
+    return render(request, 'gift-certificates.html', {})
+
 def static(request, url=None):
     if MaintenanceMode.get_solo().maintenance:
         return render(request, 'maintenance.html', {})
     context = {}
     print "Url passed by parse: %s" % str(url)
+    if url == 'directions.htm/':
+	url = 'hours/'
+    if url == 'catering_services.htm/':
+        url = 'catering/'
     page = get_object_or_404(StaticPage, pk=url)
     context['title'] = page.title
     context['content'] = page.content

@@ -14,6 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, patterns, url
+from django.views.generic import RedirectView
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
 from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
@@ -30,7 +33,12 @@ urlpatterns += patterns('restaurant.views',
     url(r'^home/$', 'home', name='home'),
     # Menu
     url(r'^menu/(?P<menutype>.*)/$', 'view_menu', name='view_menu'),
-    url(r'^(?P<url>.*/)$', 'static', name='static') # static page catchall
+    url(r'^gift-certificates/$', 'gifts', name='gifts'),
+    # redirect old hours
+    #url(r'^directions.htm/$', HttpResponseRedirect(reverse('static', kwargs={'url':'hours'})), name='hours-redirect'),
+    #url(r'^directions.htm/$', RedirectView.as_view(pattern_name='static')),
+    # redirect old catering
+    url(r'^(?P<url>.*/)$', 'static', name='static'), # static page catchall
 
 )
 
