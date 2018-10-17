@@ -42,7 +42,10 @@ a:hover, a:focus {
 }
 
 body {
-    font-family: scripty;/*"Monotype Corsiva";*/
+    /*font-family: scripty;*//*"Monotype Corsiva";*/
+    font-family: copperplate, serif;
+    font-style: normal;
+    font-weight: 300;
     font-size: 20px;   
 }
 
@@ -58,7 +61,10 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: title;
+    /*font-family: title;*/
+    font-family: copperplate, serif;
+    font-style: normal;
+    font-weight: 500;
     color:#8DC63F;
 }
 
@@ -75,7 +81,10 @@ h1, h2, h3, h4, h5, h6 {
 .navbar { border-width: 0px;
           border-top-left-radius: 0px;
           border-top-right-radius: 0px;
-          font-family: title;
+          /*font-family: title;*/
+          font-family: copperplate, serif;
+          font-style: normal;
+          font-weight: 500;
           margin-bottom: 0px;
           transition: all 0.4s ease;
           -webkit-transition: all 0.4s ease;
@@ -230,14 +239,20 @@ tr.menu-item {
 tr.menu-option {
   color:#68471A;
   /*color: #8DC63F;*/
-  font-family: option;
+  /*font-family: option;*/
+  font-family: copperplate, serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 14px;
 
 }
 
 .menu-price {
   font-size: 16px;
-  font-family: scripty;
+  /*font-family: scripty;*/
+  font-family: copperplate, serif;
+  font-style: normal;
+  font-weight: 300;
   white-space: nowrap;
 }
 
@@ -254,7 +269,10 @@ tr.menu-option>td {
 }
 
 .category-description {
-  font-family: option;
+  /*font-family: option;*/
+  font-family: copperplate, serif;
+  font-style: normal;
+  font-weight: 300;
   text-align: center;
 }
 
