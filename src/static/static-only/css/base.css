@@ -3,7 +3,6 @@
 .white { color:#FFFFFF;}
 .brown { color:#68471A;}
 .green { color:#8DC63F;}       
-.black { color:#000000;}
 
 .bg-grey  { background-color:#58595B;}
 .bg-white { background-color:#FFFFFF;}
@@ -34,16 +33,19 @@ a:hover, a:focus {
 
 @font-face {
   font-family: option;
-  src: url('/static/fonts/CaviarDreams.ttf');
+  /*src: url('/static/fonts/CaviarDreams.ttf');*/
   /*src: url('/static/fonts/Plumeria.ttf');*/
-  /*src: url('/static/fonts/apple_garamond/AppleGaramond-LightItalic.ttf');*/
+  src: url('/static/fonts/apple_garamond/AppleGaramond-LightItalic.ttf');
   /*src: url('/static/fonts/derivia/Derivia.TTF');*/
   /*src: url('/static/fonts/Oranianbauma.ttf');*/
 
 }
 
 body {
-    font-family: scripty;/*"Monotype Corsiva";*/
+    /*font-family: scripty;*//*"Monotype Corsiva";*/
+    font-family: copperplate, serif;
+    font-style: normal;
+    font-weight: 300;
     font-size: 20px;   
 }
 
@@ -59,13 +61,16 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: title;
+    /*font-family: title;*/
+    font-family: copperplate, serif;
+    font-style: normal;
+    font-weight: 500;
     color:#8DC63F;
 }
 
 .carousel-caption>h1 {
+  text-shadow:0px 0px 3px #fff;
   color:#000;
-  text-shadow:0 0 3px #fff;
 }
 
 .container-fluid {
@@ -76,7 +81,10 @@ h1, h2, h3, h4, h5, h6 {
 .navbar { border-width: 0px;
           border-top-left-radius: 0px;
           border-top-right-radius: 0px;
-          font-family: title;
+          /*font-family: title;*/
+          font-family: copperplate, serif;
+          font-style: normal;
+          font-weight: 500;
           margin-bottom: 0px;
           transition: all 0.4s ease;
           -webkit-transition: all 0.4s ease;
@@ -231,14 +239,20 @@ tr.menu-item {
 tr.menu-option {
   color:#68471A;
   /*color: #8DC63F;*/
-  font-family: option;
+  /*font-family: option;*/
+  font-family: copperplate, serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 14px;
 
 }
 
 .menu-price {
   font-size: 16px;
-  font-family: scripty;
+  /*font-family: scripty;*/
+  font-family: copperplate, serif;
+  font-style: normal;
+  font-weight: 300;
   white-space: nowrap;
 }
 
@@ -255,7 +269,10 @@ tr.menu-option>td {
 }
 
 .category-description {
-  font-family: option;
+  /*font-family: option;*/
+  font-family: copperplate, serif;
+  font-style: normal;
+  font-weight: 300;
   text-align: center;
 }
 
